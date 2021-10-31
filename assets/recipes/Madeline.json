@@ -1,0 +1,309 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.recipetineats.com/#organization",
+        "name": "RecipeTin Eats",
+        "url": "https://www.recipetineats.com/",
+        "sameAs": [
+          "https://www.facebook.com/RecipeTinEats",
+          "http://instagram.com/recipe_tin",
+          "https://www.linkedin.com/in/nagi-maehashi-9779648b",
+          "https://www.youtube.com/c/recipetineats",
+          "http://www.pinterest.com/recipetin/"
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.recipetineats.com/#logo",
+          "inLanguage": "en-US",
+          "url": "https://www.recipetineats.com/wp-content/uploads/2019/04/RecipeTinEats_logo_for_Knowledge_Graph_card.png",
+          "contentUrl": "https://www.recipetineats.com/wp-content/uploads/2019/04/RecipeTinEats_logo_for_Knowledge_Graph_card.png",
+          "width": 2591,
+          "height": 347,
+          "caption": "RecipeTin Eats"
+        },
+        "image": {
+          "@id": "https://www.recipetineats.com/#logo"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.recipetineats.com/#website",
+        "url": "https://www.recipetineats.com/",
+        "name": "RecipeTin Eats",
+        "description": "Fast Prep, Big Flavours",
+        "publisher": {
+          "@id": "https://www.recipetineats.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.recipetineats.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.recipetineats.com/madeleines/#primaryimage",
+        "inLanguage": "en-US",
+        "url": "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04.jpg",
+        "contentUrl": "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04.jpg",
+        "width": 900,
+        "height": 1260,
+        "caption": "Close up of a pile of Madeleines"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.recipetineats.com/madeleines/#webpage",
+        "url": "https://www.recipetineats.com/madeleines/",
+        "name": "Madeleines | RecipeTin Eats",
+        "isPartOf": {
+          "@id": "https://www.recipetineats.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.recipetineats.com/madeleines/#primaryimage"
+        },
+        "datePublished": "2021-07-09T07:04:12+00:00",
+        "dateModified": "2021-07-12T02:41:00+00:00",
+        "breadcrumb": {
+          "@id": "https://www.recipetineats.com/madeleines/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://www.recipetineats.com/madeleines/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.recipetineats.com/madeleines/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.recipetineats.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Baking Recipes",
+            "item": "https://www.recipetineats.com/category/baking-recipes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Madeleines"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://www.recipetineats.com/madeleines/#article",
+        "isPartOf": {
+          "@id": "https://www.recipetineats.com/madeleines/#webpage"
+        },
+        "author": {
+          "@id": "https://www.recipetineats.com/#/schema/person/1d495a057e0419b552333c8526d827a9"
+        },
+        "headline": "Madeleines",
+        "datePublished": "2021-07-09T07:04:12+00:00",
+        "dateModified": "2021-07-12T02:41:00+00:00",
+        "wordCount": 1963,
+        "commentCount": 75,
+        "publisher": {
+          "@id": "https://www.recipetineats.com/#organization"
+        },
+        "image": {
+          "@id": "https://www.recipetineats.com/madeleines/#primaryimage"
+        },
+        "thumbnailUrl": "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04.jpg",
+        "articleSection": [
+          "Baking Recipes",
+          "Cupcakes &amp; Muffins",
+          "Easter Baking &amp; Desserts",
+          "French Recipes",
+          "Sweet"
+        ],
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "CommentAction",
+            "name": "Comment",
+            "target": [
+              "https://www.recipetineats.com/madeleines/#respond"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.recipetineats.com/#/schema/person/1d495a057e0419b552333c8526d827a9",
+        "name": "Nagi",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://www.recipetineats.com/#personlogo",
+          "inLanguage": "en-US",
+          "url": "https://secure.gravatar.com/avatar/400004f5258d5b43d30deed3aa6e9566?s=96&d=https%3A%2F%2Fwww.recipetineats.com%2Fwp-content%2Fthemes%2Fonce-coupled-recipe-tin-eats%2Fassets%2Fimages%2Favatar-guest-temp-cache-bust-duplicate.png&r=g",
+          "contentUrl": "https://secure.gravatar.com/avatar/400004f5258d5b43d30deed3aa6e9566?s=96&d=https%3A%2F%2Fwww.recipetineats.com%2Fwp-content%2Fthemes%2Fonce-coupled-recipe-tin-eats%2Fassets%2Fimages%2Favatar-guest-temp-cache-bust-duplicate.png&r=g",
+          "caption": "Nagi"
+        },
+        "description": "I believe you can make great food with everyday ingredients even if you’re short on time and cost conscious. You just need to cook clever and get creative!",
+        "sameAs": [
+          "http:////www.recipetineats.com/about-me/"
+        ]
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Recipe",
+        "name": "Madeleines",
+        "author": {
+          "@type": "Person",
+          "name": "Nagi"
+        },
+        "description": "Recipe video above. Madeleines are sweet little French sponge cakes that are as delightful to look at as they are to eat. Flavoured with a hint of lemon and with the signature shell shape, these adorable mini butter cakes make for a lovely afternoon tea, or a pretty finish for any meal. Best served hot and fresh out of the oven. Keep the batter in a piping bag, then 10 minutes in the oven is all it takes!",
+        "datePublished": "2021-07-09T17:04:12+00:00",
+        "image": [
+          "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04-SQ.jpg",
+          "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04-SQ.jpg?w=500&h=500&crop=1",
+          "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04-SQ.jpg?w=500&h=375&crop=1",
+          "https://www.recipetineats.com/wp-content/uploads/2021/07/Madeleines_04-SQ.jpg?w=480&h=270&crop=1"
+        ],
+        "recipeYield": [
+          "24"
+        ],
+        "prepTime": "PT15M",
+        "cookTime": "PT10M",
+        "recipeIngredient": [
+          "3/4 cup + 1 tbsp  plain flour (all purpose flour)",
+          "1 1/4 tsp baking powder",
+          "3  large eggs (, at room temperature (Note 1))",
+          "2/3 cup caster sugar (superfine sugar) ((ordinary / granulated sugar ok too))",
+          "1 tsp salt",
+          "1 tbsp vegetable oil ((or other neutral oil))",
+          "3 tbsp milk (, full fat (low fat ok too))",
+          "2 tsp honey ((or maple syrup))",
+          "2 tsp vanilla extract",
+          "2 tsp lemon zest",
+          "135g / 9.5 tbsp  unsalted butter (, melted, warm (not hot))",
+          "Canola oil spray ((or other neutral oil))",
+          "Icing sugar / powdered sugar ((optional, for dusting))"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Sift flour: Sift the flour and baking powder into a bowl.",
+            "name": "Sift flour: Sift the flour and baking powder into a bowl.",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-0"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Whisk eggs and sugar: Whisk the eggs and sugar vigorously for 2 minutes until it becomes paler in colour and it&#039;s foamy (or 1 minute on speed 6 with handheld beater).",
+            "name": "Whisk eggs and sugar: Whisk the eggs and sugar vigorously for 2 minutes until it becomes paler in colour and it&#039;s foamy (or 1 minute on speed 6 with handheld beater).",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-1"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mix flour in 3 parts: Add the flour mixture in 3 parts, whisking gently in between until combined.",
+            "name": "Mix flour in 3 parts: Add the flour mixture in 3 parts, whisking gently in between until combined.",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-2"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Add everything else except butter: Add salt, oil, milk, honey, vanilla and lemon. Mix until combined.",
+            "name": "Add everything else except butter: Add salt, oil, milk, honey, vanilla and lemon. Mix until combined.",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-3"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Add butter: Add butter, mix gently with a rubber spatula until combined. The batter is fairly thin but should leave a faint ribbon briefly on the surface (see video).",
+            "name": "Add butter: Add butter, mix gently with a rubber spatula until combined. The batter is fairly thin but should leave a faint ribbon briefly on the surface (see video).",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-4"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Cover and refrigerate: Cover with plastic wrap touching the surface and leave it in the fridge overnight (minimum 6 hours).",
+            "name": "Cover and refrigerate: Cover with plastic wrap touching the surface and leave it in the fridge overnight (minimum 6 hours).",
+            "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-0-5"
+          },
+          {
+            "@type": "HowToSection",
+            "name": "Baking (next day):",
+            "itemListElement": [
+              {
+                "@type": "HowToStep",
+                "text": "Preheat oven to 200°C / 390°F (180°C fan) for at least 30 minutes.",
+                "name": "Preheat oven to 200°C / 390°F (180°C fan) for at least 30 minutes.",
+                "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-1-0"
+              },
+              {
+                "@type": "HowToStep",
+                "text": "Piping bags - Pour the madeleine batter into 2 piping bags (or 1 large) either fitted with a round tip nozzle around 0.7 - 1.2cm (0.3 - 0.5&quot;) wide, or snip the end off. (You can refrigerate until required at this stage, or freeze 2 months).",
+                "name": "Piping bags - Pour the madeleine batter into 2 piping bags (or 1 large) either fitted with a round tip nozzle around 0.7 - 1.2cm (0.3 - 0.5&quot;) wide, or snip the end off. (You can refrigerate until required at this stage, or freeze 2 months).",
+                "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-1-1"
+              },
+              {
+                "@type": "HowToStep",
+                "text": "Spray and fill pan: Spray the madeleine pan with oil. Fill each hole almost to the top (2just 1m from the rim).",
+                "name": "Spray and fill pan: Spray the madeleine pan with oil. Fill each hole almost to the top (2just 1m from the rim).",
+                "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-1-2"
+              },
+              {
+                "@type": "HowToStep",
+                "text": "Bake: Bake for 10 minutes until light golden.",
+                "name": "Bake: Bake for 10 minutes until light golden.",
+                "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-1-3"
+              },
+              {
+                "@type": "HowToStep",
+                "text": "Serve warm! Unmold straight away. Pile onto serving platter. Dust with icing sugar and serve immediately, while hot!",
+                "name": "Serve warm! Unmold straight away. Pile onto serving platter. Dust with icing sugar and serve immediately, while hot!",
+                "url": "https://www.recipetineats.com/madeleines/#wprm-recipe-65550-step-1-4"
+              }
+            ]
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "15"
+        },
+        "recipeCategory": [
+          "Sweet"
+        ],
+        "recipeCuisine": [
+          "French"
+        ],
+        "keywords": "afternoon tea, french baking, french cake, madeleines",
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "82 kcal",
+          "carbohydrateContent": "6 g",
+          "proteinContent": "1 g",
+          "fatContent": "6 g",
+          "saturatedFatContent": "4 g",
+          "transFatContent": "1 g",
+          "cholesterolContent": "34 mg",
+          "sodiumContent": "106 mg",
+          "fiberContent": "1 g",
+          "sugarContent": "6 g",
+          "servingSize": "1 serving"
+        },
+        "@id": "https://www.recipetineats.com/madeleines/#recipe",
+        "isPartOf": {
+          "@id": "https://www.recipetineats.com/madeleines/#article"
+        },
+        "mainEntityOfPage": "https://www.recipetineats.com/madeleines/#webpage"
+      }
+    ]
+  }

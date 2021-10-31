@@ -1,8 +1,9 @@
 class RecipeCard extends HTMLElement {
   constructor() {
     // Part 1 Expose - TODO
-
+    super();
     // You'll want to attach the shadow DOM here
+    this.shadow = this.attachShadow({mode: 'open'});
   }
 
   set data(data) {
@@ -100,9 +101,132 @@ class RecipeCard extends HTMLElement {
     // created in the constructor()
 
     // Part 1 Expose - TODO
+
+    //Img tag
+    const imgEl1 = document.createElement('img');
+    if(data['image'] != null){
+      imgEl1.setAttribute('src', data['image']['thumbnail']);
+      imgEl1.setAttribute('alt', data['headline']);
+    }
+    else{
+      imgEl1.setAttribute('src', getUrl2(data));
+    }
+
+    //P tag with a nested in it
+    const pEl = document.createElement('p');
+    pEl.setAttribute('class', 'title'); 
+
+    const aEl = document.createElement('a');
+    if(data['url'] != null) {
+      aEl.setAttribute('href', data['url']);
+    } else {
+      aEl.setAttribute('href', getValue(data, "Article", "@id"));
+    }
+
+    if(data['headline'] != null) {
+      aEl.innerHTML = data['headline']
+    } else {
+      aEl.innerHTML = getValue(data, "Article", "headline");
+    }
+
+    pEl.appendChild(aEl);
+  
+    //Another p tag
+    const pEl2 = document.createElement('p');
+    pEl2.setAttribute('class', 'organization'); 
+    if(data['publisher'] != null){
+      pEl2.innerHTML = data['publisher']['name']
+    }
+    else{
+      pEl2.innerHTML = getValue(data, "Organization", "name");
+    }
+
+    //div tag for reviews 
+    const divEl = document.createElement('div');
+    divEl.setAttribute('class', 'rating');
+    if(getValue(data, 'Recipe', 'aggregateRating') == null || getValue(data, 'Recipe', 'aggregateRating')['ratingValue'] == null){
+      const spanEl1 = document.createElement('span');
+      spanEl1.innerHTML = "No Reviews";
+      divEl.appendChild(spanEl1);
+    }
+    else{
+      const spanEl1 = document.createElement('span');
+      spanEl1.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingValue']
+      const imgEl2 = document.createElement('img');
+      imgEl2.setAttribute('src', "/assets/images/icons/5-star.svg");
+      imgEl2.setAttribute('alt', "5 star");
+      const spanEl2 = document.createElement('span');
+      spanEl2.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingCount']
+  
+      divEl.appendChild(spanEl1);
+      divEl.appendChild(imgEl2);
+      divEl.appendChild(spanEl2);
+    }
+    
+    //time tag
+    const timeEl = document.createElement('time');
+    if(data['totalTime'] != null){
+      timeEl.innerHTML = convertTime(data['totalTime']);
+    }else if(getValue(data, 'Recipe', 'totalTime') != null){
+      timeEl.innerHTML = convertTime(getValue(data, 'Recipe', 'totalTime'));
+    }else{
+      timeEl.innerHTML = convertTime(getValue(data, 'Recipe', 'prepTime') + getValue(data, 'Recipe', 'cookTime'));
+    }
+
+    //p tag for ingredients
+    const pEl3 = document.createElement('p');
+    pEl3.setAttribute('class', 'ingredients'); 
+    if(data['recipeIngredient'] != null){
+      pEl3.innerHTML = createIngredientList(data['recipeIngredient']);
+    }
+    else{
+      pEl3.innerHTML = createIngredientList(getValue(data, "Recipe", "recipeIngredient"));
+    }
+    
+    //adding to main element in index.html
+    card.appendChild(imgEl1);
+    card.appendChild(pEl);
+    card.appendChild(pEl2);
+    card.appendChild(divEl);
+    card.appendChild(timeEl);
+    card.appendChild(pEl3);
+
+    this.shadow.appendChild(styleElem);
+    this.shadow.appendChild(card);
+
   }
+
+}
+//My own helper functions
+/**
+ * Extract the URL from the given recipe schema JSON object
+ * @param {Object} data Raw recipe JSON to find the URL of
+ * @returns {String} If found, it returns the URL as a string, otherwise null
+ */
+ function getUrl2(data) {
+  if (data.url) return data.url;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'ImageObject') return data['@graph'][i]['url'];
+    }
+  };
+  return null;
 }
 
+/**
+ * Extract the URL from the given recipe schema JSON object
+ * @param {Object} data Raw recipe JSON to find the URL of
+ * @returns {String} If found, it returns the URL as a string, otherwise null
+ */
+ function getValue(data, type, key) {
+  if (data.url) return data.url;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == type) return data['@graph'][i][key];
+    }
+  };
+  return null;
+}
 
 /*********************************************************************/
 /***                       Helper Functions:                       ***/

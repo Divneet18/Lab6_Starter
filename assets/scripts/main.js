@@ -5,7 +5,10 @@
 const recipes = [
   'https://introweb.tech/assets/json/ghostCookies.json',
   'https://introweb.tech/assets/json/birthdayCake.json',
-  'https://introweb.tech/assets/json/chocolateChip.json'
+  'https://introweb.tech/assets/json/chocolateChip.json',
+  'assets/recipes/MacNCheese.json',
+  'assets/recipes/Madeline.json',
+  'assets/recipes/SmoresFrenchToast.json'
 ];
 
 // Once all of the recipes that were specified above have been fetched, their
@@ -38,11 +41,27 @@ async function fetchRecipes() {
     // for the keys. Once everything in the array has been successfully fetched, call the resolve(true)
     // callback function to resolve this promise. If there's any error fetching any of the items, call
     // the reject(false) function.
-
+    
+    // Part 1 Expose - TODO
+    (async () => {
+      try{
+        for (let i = 0; i < recipes.length; i++) {
+          let keyToadd = recipes[i];
+          const response = await fetch(keyToadd);
+          const data = await response.json();
+          console.log("data", data);
+          recipeData[keyToadd] = data;
+        }
+        if(recipes.length === Object.keys(recipeData).length){
+          resolve(true);
+        }
+      } 
+      catch(e){
+        reject(false);
+      }
+    })()
     // For part 2 - note that you can fetch local files as well, so store any JSON files you'd like to fetch
     // in the recipes folder and fetch them from there. You'll need to add their paths to the recipes array.
-
-    // Part 1 Expose - TODO
   });
 }
 
@@ -54,9 +73,62 @@ function createRecipeCards() {
   // show any others you've added when the user clicks on the "Show more" button.
 
   // Part 1 Expose - TODO
-}
+  const main = document.getElementsByTagName("main")[0];
+  let j = 0;
+  for(const key in recipeData){
+    const recipeCard = document.createElement('recipe-card');
+    main.appendChild(recipeCard);
+    recipeCard.data = recipeData[key];
+    if(j == 2){
+      break;
+    }
+    j++;
+  }
+} 
 
 function bindShowMore() {
+  const showMoreButton = document.querySelector('button');
+  const main = document.getElementsByTagName("main")[0];
+  let currentStatus = "less";
+
+  let j = 0;
+  for(const key in recipeData){
+    if (j >= 3) {
+      const recipeCard = document.createElement('recipe-card');
+      main.appendChild(recipeCard);
+      recipeCard.data = recipeData[key];
+      recipeCard.style.display = "none";
+    }
+    j++;
+  }
+
+  showMoreButton.addEventListener('click', (event) => {
+    if (currentStatus === "less"){
+      showMoreButton.innerHTML = "Show Less";
+      const recipeCards = document.getElementsByTagName('recipe-card');
+      let j = 0;
+      for(const key in recipeData){
+        if (j >= 3) {
+          const recipeCard = recipeCards[j];
+          recipeCard.style.display = "block";  
+        }
+        j++;
+      }
+      currentStatus = "more";
+    } else if (currentStatus === "more") {
+      showMoreButton.innerHTML = "Show More";
+      const recipeCards = document.getElementsByTagName('recipe-card');
+      let j = 0;
+      for(const key in recipeData){
+        if (j >= 3) {
+          const recipeCard = recipeCards[j];
+          recipeCard.style.display = "none";  
+        }
+        j++;
+      }
+      currentStatus = "less";
+    }
+});
   // This function is also called for you up above.
   // Use this to add the event listener to the "Show more" button, from within 
   // that listener you can then create recipe cards for the rest of the .json files
