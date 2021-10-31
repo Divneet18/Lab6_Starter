@@ -153,7 +153,7 @@ class RecipeCard extends HTMLElement {
       const spanEl1 = document.createElement('span');
       spanEl1.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingValue']
       const imgEl2 = document.createElement('img');
-      imgEl2.setAttribute('src', "https://github.com/Divneet18/Lab6_Starter/main/assets/images/icons/5-star.svg");
+      imgEl2.setAttribute('src', "https://github.com/Divneet18/Lab6_Starter/blob/main/assets/images/icons/5-star.svg");
       imgEl2.setAttribute('alt', "5 star");
       const spanEl2 = document.createElement('span');
       spanEl2.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingCount']
