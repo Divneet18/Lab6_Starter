@@ -151,10 +151,12 @@ class RecipeCard extends HTMLElement {
     }
     else{
       const spanEl1 = document.createElement('span');
-      spanEl1.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingValue']
+      spanEl1.innerHTML = getValue(data, 'Recipe', 'aggregateRating')['ratingValue']
       const imgEl2 = document.createElement('img');
-      imgEl2.setAttribute('src', "assets/images/icons/5-star.svg");
-      imgEl2.setAttribute('alt', "5 star");
+
+      const starImage = Math.round(parseFloat(getValue(data, 'Recipe', 'aggregateRating')['ratingValue']))
+      imgEl2.setAttribute('src', `assets/images/icons/${starImage}-star.svg`);
+      imgEl2.setAttribute('alt', `${starImage} star`);
       const spanEl2 = document.createElement('span');
       spanEl2.innerHTML =getValue(data, 'Recipe', 'aggregateRating')['ratingCount']
   

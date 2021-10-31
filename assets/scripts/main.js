@@ -49,7 +49,6 @@ async function fetchRecipes() {
           let keyToadd = recipes[i];
           const response = await fetch(keyToadd);
           const data = await response.json();
-          console.log("data", data);
           recipeData[keyToadd] = data;
         }
         if(recipes.length === Object.keys(recipeData).length){
